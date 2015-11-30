@@ -594,7 +594,8 @@ class LdapAuthenticationPlugin extends AuthPlugin {
 		$tmpservers = $this->getConf( 'ServerNames', $domain );
 		$tok = strtok( $tmpservers, " " );
 		while ( $tok ) {
-			$servers = $servers . " " . $serverpre . $tok . ":" . $this->getConf( 'Port', $domain );
+			// $servers = $servers . " " . $serverpre . $tok . ":" . $this->getConf( 'Port', $domain );
+			$servers = $servers . " " . $serverpre . $tok;
 			$tok = strtok( " " );
 		}
 		$servers = rtrim( $servers );
